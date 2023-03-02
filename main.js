@@ -3,7 +3,7 @@ let starX = [];
 let starY = [];
 let starAlpha = [];
 
-for (let i = 0; i < 150; i++) {
+for (let i = 0; i < 152; i++) {
   const x = Math.floor(Math.random() * width);
   const y = Math.floor(Math.random() * height);
   const alpha = Math.random();
@@ -18,7 +18,9 @@ function draw() {
   background(0, 0, 0);
 
   for (let index in starX) {
-    fill(255, 255, 255, starAlpha[index] * 255);
-    ellipse(starX[index], starY[index], 3);
+    fill(255, 255, 255, Math.abs(Math.sin(starAlpha[index])) * 255);
+    ellipse(starX[index], starY[index], 4);
+    starAlpha[index] = starAlpha[index] + 0.02;
   }
 }
+
