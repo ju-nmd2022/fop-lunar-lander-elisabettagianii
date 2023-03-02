@@ -1,3 +1,7 @@
+// creating the canva
+function setup() {
+  createCanvas(windowWidth, windowHeight);}
+
 // sky with stars. source:Garrit's videolecture
 let starX = [];
 let starY = [];
