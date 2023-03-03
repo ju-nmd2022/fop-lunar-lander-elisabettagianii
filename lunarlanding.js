@@ -152,7 +152,7 @@ function rocket(x, y) {
 
   pop();
 }
-// source: modified from Garrit's videolecture
+// source: modified from Garrit's videolecture and helped by Klara Swiecicka
 state = "start";
 
 function draw() {
@@ -208,4 +208,13 @@ function draw() {
 }
 function startPlaying() {
   state = "play";
+}
+// start again the game when you have finished
+function doubleClicked() {
+  state = "play";
+  rocketX = 400;
+  rocketY = 100;
+  velocity = 0.1;
+  acceleration = 0.1;
+  isGameActive = true;
 }
