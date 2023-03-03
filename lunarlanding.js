@@ -15,6 +15,7 @@ function setup() {
   button.style("border", "none");
   button.size(100, 50);
   button.hide();
+  button.mousePressed(startPlaying);
 }
 
 background(0, 0, 0);
@@ -49,8 +50,9 @@ function screen1() {
   text("ASTRO GAME", 100, 300, 900, 500);
   button.show();
 }
-// sky with stars. source:Garrit's videolecture
+// screen 2
 function screen2() {
+  // sky with stars. source:Garrit's videolecture
   noStroke();
   background(0, 0, 0);
 
@@ -59,6 +61,7 @@ function screen2() {
     ellipse(starX[index], starY[index], 4);
     starAlpha[index] = starAlpha[index] + 0.02;
   }
+  button.hide();
 }
 // screen for when you win the game
 function screenWin() {
@@ -202,4 +205,7 @@ function draw() {
     screenLost();
     ground(0, 630);
   }
+}
+function startPlaying() {
+  state = "play";
 }
