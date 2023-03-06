@@ -9,7 +9,7 @@ function setup() {
   createCanvas(800, 800);
   // creating the button
   button = createButton("START");
-  button.position(400, 400);
+  button.position(370, 400);
   button.style("color:white");
   button.style("background-color:black");
   button.style("border", "none");
@@ -45,9 +45,17 @@ function screen1() {
     ellipse(starX[index], starY[index], 4);
     starAlpha[index] = starAlpha[index] + 0.02;
   }
+  // title of the game
   fill(255, 255, 255);
   textSize(70);
-  text("ASTRO GAME", 100, 300, 900, 500);
+  text("ASTRO GAME", 150, 206, 900, 500);
+  fill(250, 50, 150);
+  textSize(70);
+  text("ASTRO GAME", 150, 200, 900, 500);
+  // instructions of the game
+  fill(255, 255, 255);
+  textSize(27);
+  text("⚠️ use the keybord arrows to make the ufo-rocket land on the oval platform ⚠️", 150, 300, 500, 500);
   button.show();
 }
 // screen 2
@@ -164,6 +172,7 @@ function draw() {
   if (state === "play") {
     // screen 2
     background(255, 255, 255);
+
     screen2();
     ground(0, 630);
     rocket(rocketX, rocketY);
