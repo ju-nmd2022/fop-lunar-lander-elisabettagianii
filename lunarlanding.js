@@ -229,6 +229,9 @@ function draw() {
     if (keyIsDown(38)) {
       velocity = velocity - 0.3;
     }
+    if (keyIsDown(40)) {
+      velocity = velocity + 0.3;
+    }
     if (keyIsDown(37)) {
       rocketX = rocketX - 4;
     }
