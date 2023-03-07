@@ -137,8 +137,15 @@ function ground(x, y) {
   fill(211, 211, 211);
   rect(x, y, 800, 500);
   // target where to land the rocket
-  fill(0, 0, 0);
-  ellipse(200, 700, 200, 40);
+  
+  fill(0, 0, 255);
+  ellipse(200, 700, 200, 50);
+
+  fill(255, 0, 0);
+  ellipse(200, 700, 130, 30);
+
+  fill(255, 255, 0);
+  ellipse(200, 700, 40, 10);
 }
 // making the rocket using part of the code from the ufo of the Garrit's exemple
 function rocket(x, y) {
