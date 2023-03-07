@@ -104,8 +104,9 @@ function ground(x, y) {
   noStroke();
   fill(211, 211, 211);
   rect(x, y, 800, 500);
+  // where to land the rocket
   fill(0, 0, 0);
-  ellipse(400, 700, 200, 40);
+  ellipse(200, 700, 200, 40);
 }
 // making the rocket using part of the code from the ufo of the Garrit's exemple
 function rocket(x, y) {
@@ -196,7 +197,7 @@ function draw() {
       rocketX = rocketX + 4;
     }
   }
-  if (rocketX > 350 && rocketX < 450 && rocketY > 604) {
+  if (rocketX > 150 && rocketX < 250 && rocketY > 604) {
     state = "win";
   }
   if (state === "win") {
@@ -204,10 +205,10 @@ function draw() {
     ground(0, 630);
     rocket(400, 610);
   }
-  if (rocketX > 0 && rocketX < 300 && rocketY > 604) {
+  if (rocketX > 0 && rocketX < 150 && rocketY > 604) {
     state = "lost";
   }
-  if (rocketX > 500 && rocketX < 800 && rocketY > 604) {
+  if (rocketX > 250 && rocketX < 800 && rocketY > 604) {
     state = "lost";
   }
   if (state === "lost") {
