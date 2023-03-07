@@ -56,10 +56,10 @@ function screen1() {
   fill(255, 255, 255);
   textSize(27);
   text(
-    "⚠️ use the keybord arrows to make the ufo-rocket land on the oval platform ⚠️",
-    150,
+    "⚠️ use the keybord arrows to make the rocket land on the oval target ⚠️",
+    170,
     300,
-    500,
+    450,
     500
   );
   button.show();
@@ -136,7 +136,7 @@ function ground(x, y) {
   noStroke();
   fill(211, 211, 211);
   rect(x, y, 800, 500);
-  // where to land the rocket
+  // target where to land the rocket
   fill(0, 0, 0);
   ellipse(200, 700, 200, 40);
 }
@@ -259,5 +259,4 @@ function doubleClicked() {
   velocity = 5;
   acceleration = 0.1;
   isGameActive = true;
-
 }
