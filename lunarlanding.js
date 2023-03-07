@@ -1,6 +1,6 @@
 let rocketY = 100;
 let rocketX = 400;
-let velocity = 0.1;
+let velocity = 5;
 let acceleration = 0.1;
 let isGameActive = true;
 
@@ -55,7 +55,13 @@ function screen1() {
   // instructions of the game
   fill(255, 255, 255);
   textSize(27);
-  text("⚠️ use the keybord arrows to make the ufo-rocket land on the oval platform ⚠️", 150, 300, 500, 500);
+  text(
+    "⚠️ use the keybord arrows to make the ufo-rocket land on the oval platform ⚠️",
+    150,
+    300,
+    500,
+    500
+  );
   button.show();
 }
 // screen 2
@@ -81,9 +87,22 @@ function screenWin() {
     ellipse(starX[index], starY[index], 4);
     starAlpha[index] = starAlpha[index] + 0.02;
   }
-  fill(255, 255, 255);
+  // you won written and play again
+  fill(0, 255, 0);
   textSize(70);
   text("YOU WON!", 200, 300, 900, 500);
+  fill(255, 255, 255);
+  textSize(27);
+  text("Look at you!🤩 You did it, little champion🥰", 120, 400, 700, 500);
+  fill(255, 255, 255);
+  textSize(17);
+  text(
+    "🔄 If you want to play again double click the screen 🔄",
+    170,
+    460,
+    500,
+    500
+  );
 }
 // screen for when you loose the game
 function screenLost() {
@@ -95,9 +114,22 @@ function screenLost() {
     ellipse(starX[index], starY[index], 4);
     starAlpha[index] = starAlpha[index] + 0.02;
   }
-  fill(255, 255, 255);
+  // you lost written, and try again
+  fill(255, 0, 0);
   textSize(70);
   text("YOU LOST!", 200, 300, 900, 500);
+  fill(255, 255, 255);
+  textSize(27);
+  text("Buuuuuuhh! Honestly, you suck at this😮‍💨", 150, 400, 500, 500);
+  fill(255, 255, 255);
+  textSize(17);
+  text(
+    "🔄 If you loser want to play again double click the screen 🔄",
+    160,
+    460,
+    500,
+    500
+  );
 }
 // ground
 function ground(x, y) {
@@ -203,7 +235,7 @@ function draw() {
   if (state === "win") {
     screenWin();
     ground(0, 630);
-    rocket(400, 610);
+    rocket(200, 610);
   }
   if (rocketX > 0 && rocketX < 150 && rocketY > 604) {
     state = "lost";
@@ -224,7 +256,8 @@ function doubleClicked() {
   state = "play";
   rocketX = 400;
   rocketY = 100;
-  velocity = 0.1;
+  velocity = 5;
   acceleration = 0.1;
   isGameActive = true;
+
 }
