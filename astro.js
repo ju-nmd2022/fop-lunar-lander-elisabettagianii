@@ -7,6 +7,7 @@ let isGameActive = true;
 // creating the canva
 function setup() {
   createCanvas(800, 800);
+  frameRate (30);
   // creating the button
   button = createButton("START");
   button.position(370, 400);
@@ -17,17 +18,15 @@ function setup() {
   button.hide();
   button.mousePressed(startPlaying);
 }
-
-background(0, 0, 0);
 // stars
 let starX = [];
 let starY = [];
 let starAlpha = [];
 
 for (let i = 0; i < 152; i++) {
-  const x = Math.floor(Math.random() * width);
-  const y = Math.floor(Math.random() * height);
-  const alpha = Math.random();
+  const x = Math.floor(Math.random() * 800);
+  const y = Math.floor(Math.random() * 800);
+  const alpha = Math.random() * 800;
 
   starX.push(x);
   starY.push(y);
@@ -137,7 +136,7 @@ function ground(x, y) {
   fill(211, 211, 211);
   rect(x, y, 800, 500);
   // target where to land the rocket
-  
+
   fill(0, 0, 255);
   ellipse(200, 700, 200, 50);
 
@@ -201,11 +200,12 @@ function rocket(x, y) {
   pop();
 }
 // source: modified from Garrit's videolecture and helped by Klara Swiecicka
-state = "start";
+let state = "start";
 
 function draw() {
   // screen 1
   if (state === "start") {
+    isGameActive = true;
     screen1();
     ground(0, 630);
   }
